@@ -1,99 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
 
-    <title>AWS Translator</title>
+<head>
+    <title>Amazon Translate</title>
+    <script src="js/aws-sdk-2.230.1.min.js"></script>
+</head>
 
-    <meta name="description" content="Source code generated using layoutit.com">
-    <meta name="author" content="LayoutIt!">
-
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-
-
-	<script src="js/aws-sdk-2.230.1.min.js"></script>
-  </head>
-  <body>
-
-    <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			<h4>
-				AWS Translator
-			</h4>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-6">
-			<form role="form">
-				<div class="form-group">
-						 
-						<label for="sourceLanguageCodeDropdown">
-							Source Language Code: 
-						</label>
-						<select id="sourceLanguageCodeDropdown">
-						  <option value="en">en</option>
-						  <option value="ar">ar</option>
-						  <option value="de">de</option>
-						  <option value="es">es</option>
-						  <option value="fr">fr</option>
-						  <option value="pt">pt</option>
-						  <option value="zh">zh</option>
-					</select>
-				</div>
-				<div class="form-group">
-					<textarea id="inputText" name="inputText" rows="10" cols="50" placeholder="Text to translate..."></textarea>
-				</div>
-			</form>
-			
-			<div class="row">
-				<div class="col-md-4">
-					<button type="button" name="translateButton" onclick="doTranslate()" class="btn btn-success">Translate</button>
-				</div>
-				<div class="col-md-4">
-					<button type="button" name="synthesizeButton" onclick="doSynthesizeInput()" class="btn btn-success">Synthesize Input Speech</button>
-				</div>
-				<div class="col-md-4">
-					<button type="button" name="clearButton" onclick="clearInputs()" class="btn btn-success">Clear</button>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-6">
-			<form role="form">
-				<div class="form-group">
-						<label for="targetLanguageCodeDropdown">
-							Target Language Code:
-						</label>
-						<select id="targetLanguageCodeDropdown">
-						  <option value="en">en</option>
-						  <option value="ar">ar</option>
-						  <option value="de">de</option>
-						  <option value="es">es</option>
-						  <option value="fr">fr</option>
-						  <option value="pt">pt</option>
-						  <option value="zh">zh</option>
-					</select>
-				</div>
-				<div class="form-group">
-					<textarea id="outputText" name="outputText" rows="10" cols="50" placeholder="Translated text..."></textarea>
-				</div>
-			</form>
-			<div class="row">
-				<div class="col-md-12">
-					<button type="button" name="synthesizeButton" onclick="doSynthesizeOutput()" class="btn btn-success">Synthesize Output Speech</button>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
-	
-	<script type="text/javascript">
+<body>
+    <h1 style="text-align: left">Amazon Translate Demo</h1>
+    <br/>
+    <table class="tg">
+        <tr>
+            <th align="left">
+Source Language Code:
+                <select id="sourceLanguageCodeDropdown">
+                      <option value="en">en</option>
+                      <option value="ar">ar</option>
+                      <option value="de">de</option>
+                      <option value="es">es</option>
+                      <option value="fr">fr</option>
+                      <option value="pt">pt</option>
+                      <option value="zh">zh</option>
+                </select>
+            </th>
+            <th align="left">
+Target Language Code:
+                <select id="targetLanguageCodeDropdown">
+                      <option value="en">en</option>
+                      <option value="ar">ar</option>
+                      <option value="de">de</option>
+                      <option value="es">es</option>
+                      <option value="fr">fr</option>
+                      <option value="pt">pt</option>
+                      <option value="zh">zh</option>
+                </select>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <textarea id="inputText" name="inputText" rows="10" cols="50" placeholder="Text to translate..."></textarea>
+            </th>
+            <th>
+                <textarea id="outputText" name="outputText" rows="10" cols="50" placeholder="Translated text..."></textarea>
+            </th>
+        </tr>
+        <tr>
+            <th align="left">
+                <button type="button" name="translateButton" onclick="doTranslate()">Translate</button>
+                <button type="button" name="synthesizeButton" onclick="doSynthesizeInput()">Synthesize Input Speech</button>
+                <button type="button" name="clearButton" onclick="clearInputs()">Clear</button>
+            </th>
+            <th align="left">
+                <button type="button" name="synthesizeButton" onclick="doSynthesizeOutput()">Synthesize Output Speech</button>
+            </th>
+        </tr>
+    </table>
+    <script type="text/javascript">
 
         // set the focus to the input box
         document.getElementById("inputText").focus();
@@ -240,5 +202,6 @@
             document.getElementById("targetLanguageCodeDropdown").value = "en";
         }
     </script>
-  </body>
+</body>
+
 </html>

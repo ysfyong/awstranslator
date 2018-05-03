@@ -19,6 +19,8 @@
   <body>
 
     <div class="container-fluid">
+	<div class="row mt-3" height="20px">
+	</div>
 	<div class="row">
 		<div class="col-md-12">
 			<h4>
@@ -45,20 +47,25 @@
 					</select>
 				</div>
 				<div class="form-group">
-					<textarea id="inputText" name="inputText" rows="10" cols="50" placeholder="Text to translate..."></textarea>
+					<textarea id="inputText" name="inputText" rows="10"  class="form-control" placeholder="Text to translate..."></textarea>
 				</div>
 			</form>
 			
-			<div class="row">
+			<div class="row mt-3">
 				<div class="col-md-4">
 					<button type="button" name="translateButton" onclick="doTranslate()" class="btn btn-success">Translate</button>
 				</div>
+			</div>
+			<div class="row mt-3">
 				<div class="col-md-4">
 					<button type="button" name="synthesizeButton" onclick="doSynthesizeInput()" class="btn btn-success">Synthesize Input Speech</button>
 				</div>
+			</div>
+			<div class="row mt-3">
 				<div class="col-md-4">
 					<button type="button" name="clearButton" onclick="clearInputs()" class="btn btn-success">Clear</button>
 				</div>
+			</div>
 			</div>
 		</div>
 		<div class="col-md-6">
@@ -78,7 +85,7 @@
 					</select>
 				</div>
 				<div class="form-group">
-					<textarea id="outputText" name="outputText" rows="10" cols="50" placeholder="Translated text..."></textarea>
+					<textarea id="outputText" name="outputText" rows="10"  class="form-control" placeholder="Translated text..."></textarea>
 				</div>
 			</form>
 			<div class="row">
